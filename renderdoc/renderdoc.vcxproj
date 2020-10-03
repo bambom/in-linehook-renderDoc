@@ -134,6 +134,14 @@
     <ClInclude Include="3rdparty\jpeg-compressor\jpgd.h" />
     <ClInclude Include="3rdparty\jpeg-compressor\jpge.h" />
     <ClInclude Include="3rdparty\lz4\lz4.h" />
+    <ClInclude Include="3rdparty\minihook\MinHook.h" />
+    <ClInclude Include="3rdparty\minihook\src\buffer.h" />
+    <ClInclude Include="3rdparty\minihook\src\hde\hde32.h" />
+    <ClInclude Include="3rdparty\minihook\src\hde\hde64.h" />
+    <ClInclude Include="3rdparty\minihook\src\hde\pstdint.h" />
+    <ClInclude Include="3rdparty\minihook\src\hde\table32.h" />
+    <ClInclude Include="3rdparty\minihook\src\hde\table64.h" />
+    <ClInclude Include="3rdparty\minihook\src\trampoline.h" />
     <ClInclude Include="3rdparty\miniz\miniz.h" />
     <ClInclude Include="3rdparty\plthook\plthook.h" />
     <ClInclude Include="3rdparty\pugixml\pugiconfig.hpp" />
@@ -315,6 +323,124 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <ClCompile Include="3rdparty\minihook\src\buffer.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</SDLCheck>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</SDLCheck>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</IntrinsicFunctions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|x64'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</IntrinsicFunctions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</FunctionLevelLinking>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</FunctionLevelLinking>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|x64'">NotUsing</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="3rdparty\minihook\src\hde\hde32.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</SDLCheck>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|x64'">NotUsing</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">NotUsing</PrecompiledHeader>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</FunctionLevelLinking>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</FunctionLevelLinking>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</IntrinsicFunctions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|x64'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</IntrinsicFunctions>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</SDLCheck>
+    </ClCompile>
+    <ClCompile Include="3rdparty\minihook\src\hde\hde64.c">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+      </ForcedIncludeFiles>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|x64'">NotUsing</PrecompiledHeader>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</InlineFunctionExpansion>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</IntrinsicFunctions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|x64'">MaxSpeed</Optimization>
+      <InlineFunctionExpansion Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</InlineFunctionExpansion>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</IntrinsicFunctions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</BasicRuntimeChecks>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</FunctionLevelLinking>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</BasicRuntimeChecks>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</FunctionLevelLinking>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</SDLCheck>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</SDLCheck>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="3rdparty\minihook\src\hook.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</SDLCheck>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</CompileAsManaged>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</SDLCheck>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</IntrinsicFunctions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|x64'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</IntrinsicFunctions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</FunctionLevelLinking>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</FunctionLevelLinking>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|x64'">NotUsing</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+      </ForcedIncludeFiles>
+    </ClCompile>
+    <ClCompile Include="3rdparty\minihook\src\trampoline.c">
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</SDLCheck>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</TreatWarningAsError>
+      <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</SDLCheck>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</IntrinsicFunctions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Development|x64'">MaxSpeed</Optimization>
+      <IntrinsicFunctions Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</IntrinsicFunctions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">true</FunctionLevelLinking>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Development|x64'">Default</BasicRuntimeChecks>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Development|x64'">false</BufferSecurityCheck>
+      <FunctionLevelLinking Condition="'$(Configuration)|$(Platform)'=='Development|x64'">true</FunctionLevelLinking>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Development|x64'">NotUsing</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
+      </ForcedIncludeFiles>
     </ClCompile>
     <ClCompile Include="3rdparty\miniz\miniz.c">
       <DisableSpecificWarnings>4100;4127</DisableSpecificWarnings>

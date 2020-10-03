@@ -31,12 +31,13 @@ typedef std::function<void(void *)> FunctionLoadCallback;
 
 struct FunctionHook
 {
-  FunctionHook() : orig(NULL), hook(NULL) {}
-  FunctionHook(const char *f, void **o, void *d) : function(f), orig(o), hook(d) {}
+  FunctionHook() : orig(NULL), hook(NULL), old_orig(NULL) {}
+  FunctionHook(const char *f, void **o, void *d) : function(f), orig(o), hook(d), old_orig(NULL) {}
   bool operator<(const FunctionHook &h) const { return function < h.function; }
   rdcstr function;
   void **orig;
   void *hook;
+  void *old_orig;    // the old original function when inline hook
 };
 
 // == Hooking workflow overview ==
@@ -202,7 +203,8 @@ public:
   void Register(const char *module_name, const char *function, void *destination_function_ptr)
   {
     LibraryHooks::RegisterFunctionHook(
-        module_name, FunctionHook(function, &orig_funcptr, destination_function_ptr));
+        module_name,
+        FunctionHook(function, &orig_funcptr, destination_function_ptr));
   }
 
 private:
