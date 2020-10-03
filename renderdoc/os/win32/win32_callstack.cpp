@@ -937,7 +937,7 @@ Win32CallstackResolver::Win32CallstackResolver(bool interactive, byte *moduleDB,
           pdbName = get_dirname(defaultPdb) + "\\" + get_basename(defaultPdb);
 
           // prompt for new pdbName, unless it's renderdoc or dbghelp, or we're non-interactive
-          if(pdbName.contains("renderdoc.") || pdbName.contains("dbghelp.") ||
+          if(pdbName.contains(STRINGIZE(RDOC_DLL_FILE) ".") || pdbName.contains("dbghelp.") ||
              pdbName.contains("symsrv.") || !interactive)
             pdbName = "";
           else
@@ -977,7 +977,7 @@ Win32CallstackResolver::Win32CallstackResolver(bool interactive, byte *moduleDB,
 
       // silently ignore renderdoc.dll, dbghelp.dll, and symsrv.dll without asking to permanently
       // ignore
-      if(m.name.contains("renderdoc.") || m.name.contains("dbghelp.") || m.name.contains("symsrv."))
+      if(m.name.contains(STRINGIZE(RDOC_DLL_FILE) ".") || m.name.contains("dbghelp.") || m.name.contains("symsrv."))
         continue;
 
       // if we're not interactive, just continue
